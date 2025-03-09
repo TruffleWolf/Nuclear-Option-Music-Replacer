@@ -15,4 +15,4 @@ A BepInEx plugin to facilitate replacing music in Nuclear Option
 ## Installation
 
 After installing BepInEx into the game, extract the **[latest release](https://github.com/BepInEx/BepInEx/releases)** into your BepInEx/plugins folder.
-Music packs go into the mod folder along side the plugin. 
+Music packs go into the mod folder alongside the plugin. 
