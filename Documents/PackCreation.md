@@ -48,6 +48,7 @@ The name of the bundle will determine when the music is played in game. See the 
 | compass   | Compass Takeoff      |
 | chicane   | Chicane Takeoff      |
 | revoker   | Revoker Takeoff      |
+| vortex | Vortex Takeoff    |
 | tarantula   | Tarantula Takeoff      |
 | ifrit   | Ifrit Takeoff     |
 | medusa   | Medusa Takeoff      |
@@ -57,6 +58,7 @@ The name of the bundle will determine when the music is played in game. See the 
 | tactical   | Tactical Nukes Unlocked      |
 | strategic   | Strategic Nukes Unlocked      |
 | kill   | High Value Kill      |
+
 
 If multiple songs are added to the same bundle, the mod will pick one at random each time it's played. If no bundle is created, the mod will play the game's default music.
 
