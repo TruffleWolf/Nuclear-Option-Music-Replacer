@@ -16,7 +16,7 @@ namespace NOMusicReplacer
     {
         private const string modGUID = "Truffle.NOMusicReplacer";
         private const string modName = "Nuclear Option Music Replacer";
-        private const string modVersion = "0.29.5.1";
+        private const string modVersion = "0.30.0.1";
 
         private readonly Harmony harmony = new Harmony(modGUID);
 
@@ -24,7 +24,7 @@ namespace NOMusicReplacer
         internal static Dictionary<string,List<AudioClip>> AudioDict = new Dictionary<string,List<AudioClip>>();
         internal static List<string> PackNames = new List<string>() { 
             "title","pala","bdf","cricket","compass","chicane","revoker","tarantula",
-            "ifrit","medusa","darkreach","win","loss","kill","tactical","strategic"
+            "ifrit","medusa","darkreach","vortex","win","loss","kill","tactical","strategic"
         };
         
         internal static Dictionary<string,string> ConversionDict = new Dictionary<string,string>();
@@ -64,11 +64,15 @@ namespace NOMusicReplacer
             ConversionDict.Add("KR-67_Ifrit_2 (UnityEngine.AudioClip)", "ifrit");
             ConversionDict.Add("EW-25_Medusa (UnityEngine.AudioClip)", "medusa");
             ConversionDict.Add("SFB81_Darkreach (UnityEngine.AudioClip)", "darkreach");
+            ConversionDict.Add("FS-20 Vortex (UnityEngine.AudioClip)", "vortex");
             ConversionDict.Add("Stratosphere_-_fadeout_ending (UnityEngine.AudioClip)", "win");
             ConversionDict.Add("Mission_Failed_extended (1) (UnityEngine.AudioClip)", "loss");
             ConversionDict.Add("12. Nuclear Escalation (UnityEngine.AudioClip)", "tactical");
+            ConversionDict.Add("Ignus Balls (UnityEngine.AudioClip)", "tactical");
             ConversionDict.Add("10. Agrapol (UnityEngine.AudioClip)", "strategic");
+            ConversionDict.Add("BDF Island Theme 3 (UnityEngine.AudioClip)", "strategic");
             ConversionDict.Add("Kill_song (UnityEngine.AudioClip)", "kill");
+            
 
             for (int i = 0; i < PackNames.Count; i++)
             {

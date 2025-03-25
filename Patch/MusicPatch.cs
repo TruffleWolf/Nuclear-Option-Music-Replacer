@@ -51,13 +51,16 @@ namespace NOMusicReplacer.Patch
             }
             else
             {
-                MusicReplacerBase.mls.LogError(song_title + " resulted in a failed pull from an asset bundle");
+                MusicReplacerBase.mls.LogError(song_title + " resulted in a failed pull. Likely either the song is not recognized by the mod or the asset bundle is broken");
             }
 
         }
 
         static AudioClip GetNewSong(string song_title) 
         {
+            if (!MusicReplacerBase.ConversionDict.ContainsKey(song_title)){
+                return null;
+            }
             string target_key = MusicReplacerBase.ConversionDict[song_title];
             if (MusicReplacerBase.BundleDict[target_key] == null)
             {
