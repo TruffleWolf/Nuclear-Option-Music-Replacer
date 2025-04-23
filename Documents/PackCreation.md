@@ -27,9 +27,15 @@ Create a new folder "Editor" in the project and add **[The above script](https:/
     <img src="https://github.com/TruffleWolf/Nuclear-Option-Music-Replacer/blob/main/Documents/Images/build_option.png">
 </p>
 
-Drag in drop your music into the project. As a rule music should be under 10mb and in .wav format. Larger filesizes and .ogg will still work but can cause the game to stutter when the song is loaded. The 10mb will likely be higher or lower depending on your hardware (SSDs will likely be able to go much higher). In my experience .ogg causes stuttering even at very low (<2mb) filesizes.
+Drag in drop your music into the project.
 <p align="center">
     <img src="https://github.com/TruffleWolf/Nuclear-Option-Music-Replacer/blob/main/Documents/Images/music_added.png">
+</p>
+
+As a rule I've found that music should be under 10mb and in .wav format. Larger filesizes and .ogg will still work but can cause the game to stutter when the song is loaded. In my experience .ogg causes stuttering even at very low (<2mb) filesizes.
+- If you need larger files, you can tell unity to preload the audio data beforehand by checking off "Preload Audio Data" in the inspector panel on the right for each song. This will remove most stuttering in exchange for a longer initial loading time when starting the game.
+<p align="center">
+    <img src="https://github.com/TruffleWolf/Nuclear-Option-Music-Replacer/blob/main/Documents/Images/Properties.png">
 </p>
 
 Now that your music added, select each one and add it to a new AssetBundle in the bottom right. 
