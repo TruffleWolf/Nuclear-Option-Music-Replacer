@@ -41,7 +41,7 @@ The names of each folder determine when the music is played in game. See the bel
 | strategic   | Strategic Nukes Unlocked      |
 | kill   | High Value Kill      |
 
-If multiple songs are added to the same bundle, the mod will pick one at random each time it's played. If no music is found, the mod will play the game's default music.
+If multiple songs are added to the same folder, the mod will pick one at random each time it's played. If no music is found, the mod will play the game's default music.
 Currently supported filetypes are .wav, .ogg, and .mp3.
 
 
