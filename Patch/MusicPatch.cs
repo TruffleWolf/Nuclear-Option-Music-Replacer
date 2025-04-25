@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
 using HarmonyLib;
 using UnityEngine;
-using UnityEngine.Windows;
+
 
 
 namespace NOMusicReplacer.Patch
@@ -16,8 +11,9 @@ namespace NOMusicReplacer.Patch
     {
         [HarmonyPatch("PlayMusic")]
         [HarmonyPrefix]
-        static void SwapTheme(ref AudioClip audioClip)
+        static void SwapTheme(ref AudioClip audioClip, ref bool repeat)
         {
+            repeat = MusicReplacerBase.LoopSetting;
             string song_title = audioClip.ToString();
 
             AudioClip new_clip = GetNewSong(song_title);
@@ -36,8 +32,9 @@ namespace NOMusicReplacer.Patch
 
         [HarmonyPatch("CrossFadeMusic")]
         [HarmonyPrefix]
-        static void SwapCrossTheme(ref AudioClip audioClip)
+        static void SwapCrossTheme(ref AudioClip audioClip, ref bool repeat)
         {
+            repeat = MusicReplacerBase.LoopSetting;
 
             string song_title = audioClip.ToString();
 
@@ -49,20 +46,17 @@ namespace NOMusicReplacer.Patch
                 audioClip = new_clip;
                 MusicReplacerBase.mls.LogInfo("Replaced: " + song_title + " with: " + new_clip.ToString());
             }
-            else
-            {
-                MusicReplacerBase.mls.LogError(song_title + " resulted in a failed pull. Likely either the song is not recognized by the mod or the asset bundle is broken");
-            }
 
         }
 
         static AudioClip GetNewSong(string song_title) 
         {
             if (!MusicReplacerBase.ConversionDict.ContainsKey(song_title)){
+                MusicReplacerBase.mls.LogError(song_title + " resulted in a failed pull.");
                 return null;
             }
             string target_key = MusicReplacerBase.ConversionDict[song_title];
-            if (MusicReplacerBase.BundleDict[target_key] == null)
+            if (MusicReplacerBase.BundleDict[target_key] == false)
             {
                 MusicReplacerBase.mls.LogInfo("Asset Bundle not found, playing " + song_title);
                 return null;
