@@ -16,7 +16,7 @@ namespace NOMusicReplacer
     {
         private const string modGUID = "Truffle.NOMusicReplacer";
         private const string modName = "Nuclear Option Music Replacer";
-        private const string modVersion = "0.30.0.1";
+        private const string modVersion = "0.30.2.1";
 
         private readonly Harmony harmony = new Harmony(modGUID);
 
@@ -122,7 +122,7 @@ namespace NOMusicReplacer
         void PreloadAudio(string path)
         {
             mls.LogInfo("BASEPATH: " + path);
-            string PlanePath = path + "Planes" +Path.DirectorySeparatorChar;
+            string PlanePath = path + "Aircraft" +Path.DirectorySeparatorChar;
             string EventPath = path + "Events" + Path.DirectorySeparatorChar;
             
             for (int i = 0; i < PlanePacks.Count; i++)
