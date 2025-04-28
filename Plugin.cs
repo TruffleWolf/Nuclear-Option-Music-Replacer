@@ -42,6 +42,7 @@ namespace NOMusicReplacer
         internal static ManualLogSource mls;
         internal static System.Random rng = new System.Random();
         internal static bool LoopSetting = false;
+        internal static string FolderPath;
         XmlDocument settings = new XmlDocument();
 
 
@@ -57,7 +58,7 @@ namespace NOMusicReplacer
             harmony.PatchAll(typeof(MusicReplacerBase));
             harmony.PatchAll(typeof(MusicPatch));
             mls.LogInfo("Music Replacer Started");
-            string FolderPath = Instance.Info.Location;
+            FolderPath = Instance.Info.Location;
             
             FolderPath = FolderPath.TrimEnd("NOMusicReplacer.dll".ToCharArray());
 
@@ -91,8 +92,10 @@ namespace NOMusicReplacer
             ConversionDict.Add("Mission_Failed_extended (1) (UnityEngine.AudioClip)", "loss");
             ConversionDict.Add("12. Nuclear Escalation (UnityEngine.AudioClip)", "tactical");
             ConversionDict.Add("Ignus Balls (UnityEngine.AudioClip)", "tactical");
+            ConversionDict.Add("3. Port Maris (UnityEngine.AudioClip)", "strategic");
             ConversionDict.Add("10. Agrapol (UnityEngine.AudioClip)", "strategic");
             ConversionDict.Add("BDF Island Theme 3 (UnityEngine.AudioClip)", "strategic");
+            ConversionDict.Add("PALA Island theme 2 (UnityEngine.AudioClip)", "strategic");
             ConversionDict.Add("Kill_song (UnityEngine.AudioClip)", "kill");
 
             PreloadAudio(FolderPath);
@@ -207,6 +210,7 @@ namespace NOMusicReplacer
             var clip = DownloadHandlerAudioClip.GetContent(loader);
             if(clip && clip.loadState == AudioDataLoadState.Loaded)
             {
+                clip.name = path.TrimStart(FolderPath.ToCharArray());
                 return clip;
             }
             mls.LogError($"Failed to load clip:{path}");
