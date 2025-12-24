@@ -5,6 +5,7 @@ using System.Xml;
 using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
+using Microsoft.SqlServer.Server;
 using NOMusicReplacer.Patch;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -23,12 +24,12 @@ namespace NOMusicReplacer
         internal static Dictionary<string,bool> BundleDict = new Dictionary<string,bool>();
         internal static Dictionary<string,List<AudioClip>> AudioDict = new Dictionary<string,List<AudioClip>>();
         internal static List<string> PackNames = new List<string>() { 
-            "cricket","compass","chicane","revoker","tarantula","ifrit","medusa","darkreach","vortex",
+            "cricket","compass","chicane","revoker","tarantula","ifrit","medusa","darkreach","vortex","ibis","brawler",
             "win","loss","kill","tactical","strategic","title","pala","bdf",
         };
         internal static List<string> PlanePacks = new List<string>()
         {
-            "cricket","compass","chicane","revoker","tarantula","ifrit","medusa","darkreach","vortex"
+            "cricket","compass","chicane","revoker","tarantula","ifrit","medusa","darkreach","vortex","ibis","brawler"
         };
         internal static List<string> EventPacks = new List<string>()
         {
@@ -88,6 +89,8 @@ namespace NOMusicReplacer
             ConversionDict.Add("EW-25_Medusa (UnityEngine.AudioClip)", "medusa");
             ConversionDict.Add("SFB81_Darkreach (UnityEngine.AudioClip)", "darkreach");
             ConversionDict.Add("FS-20 Vortex (UnityEngine.AudioClip)", "vortex");
+            ConversionDict.Add("UH-90 Ibis (UnityEngine.AudioClip)", "ibis");
+            ConversionDict.Add("CAS1 master (UnityEngine.AudioClip)", "brawler");
             ConversionDict.Add("Stratosphere_-_fadeout_ending (UnityEngine.AudioClip)", "win");
             ConversionDict.Add("Mission_Failed_extended (1) (UnityEngine.AudioClip)", "loss");
             ConversionDict.Add("12. Nuclear Escalation (UnityEngine.AudioClip)", "tactical");
