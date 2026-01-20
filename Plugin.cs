@@ -86,6 +86,7 @@ namespace NOMusicReplacer
             ConversionDict.Add("Furball (UnityEngine.AudioClip)", "revoker");
             ConversionDict.Add("18. VL-49 Tarantula (UnityEngine.AudioClip)", "tarantula");
             ConversionDict.Add("KR-67_Ifrit_2 (UnityEngine.AudioClip)", "ifrit");
+            ConversionDict.Add("KR-67 Ifrit (UnityEngine.AudioClip)", "ifrit");
             ConversionDict.Add("EW-25_Medusa (UnityEngine.AudioClip)", "medusa");
             ConversionDict.Add("SFB81_Darkreach (UnityEngine.AudioClip)", "darkreach");
             ConversionDict.Add("FS-20 Vortex (UnityEngine.AudioClip)", "vortex");
