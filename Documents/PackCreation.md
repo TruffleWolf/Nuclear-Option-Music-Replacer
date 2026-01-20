@@ -19,15 +19,17 @@ The names of each folder determine when the music is played in game. See the bel
 **Aircraft**
 | Folder Name | Situation |
 |--------------|-------------|
-| cricket   | Cricket Takeoff      |
-| compass   | Compass Takeoff      |
+| brawler   | Brawler Takeoff      |
 | chicane   | Chicane Takeoff      |
-| revoker   | Revoker Takeoff      |
-| vortex | Vortex Takeoff    |
-| tarantula   | Tarantula Takeoff      |
+| compass   | Compass Takeoff      |
+| cricket   | Cricket Takeoff      |
+| darkreach   | Darkreach Takeoff      |
+| ibis   | Ibis Takeoff     |
 | ifrit   | Ifrit Takeoff     |
 | medusa   | Medusa Takeoff      |
-| darkreach   | Darkreach Takeoff      |
+| revoker   | Revoker Takeoff      |
+| tarantula   | Tarantula Takeoff      |
+| vortex | Vortex Takeoff    |
 
 **Events**
 | Folder Name | Situation |
